@@ -1,0 +1,249 @@
+For the cluster setup I'm going to use vmware virtual machines where we will be installing th HDP later on.
+
+  
+  
+  ************************************MSTNODE01**********************************************************************
+
+# Do ifconfig to get interface name
+interface_device=eno16777736
+ip_addr=192.168.80
+bkp_date='date '+%Y_%m_%d-%H_%M_%S''
+cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
+rm -rf /etc/hosts
+echo "$ip_addr.141   mstnode1.hdp.cn hdpmstnode1 mstnode1" >> /etc/hosts
+echo "$ip_addr.142   mstnode2.hdp.cn hdpmstnode2 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.150   edgenode.hdp.cn  hdpedgenode edgenode" >> /etc/hosts
+echo "$ip_addr.151   datanode1.hdp.cn hdpdatanode1  datanode1" >> /etc/hosts
+echo "$ip_addr.152   datanode2.hdp.cn hdpdatanode2 datanode2" >> /etc/hosts   
+echo "$ip_addr.153   datanode3.hdp.cn hdpdatanode3 datanode3" >> /etc/hosts   
+cat /etc/hosts
+
+cp /etc/sysconfig/network-scripts/ifcfg-$interface_device /etc/sysconfig/network-scripts/"ifcfg-$interface_device.bkp.`$bkp_date`"
+rm -rf /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "BOOTPROTO=static" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "IPADDR=$ip_addr.141" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETMASK=255.255.255.0" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "DEVICE="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NAME="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETWORKING=yes" >> /etc/sysconfig/network
+echo "HOSTNAME=mstnode1.hdp.cn" >> /etc/sysconfig/network
+echo "GATEWAY=$ip_addr.2" >> /etc/sysconfig/network
+hostnamectl set-hostname mstnode1.hdp.cn
+chattr -i /etc/resolv.conf
+cp /etc/resolv.conf /etc/"resolv.conf.bkp.`$bkp_date`"
+rm -rf /etc/resolv.conf
+echo "nameserver $ip_addr.2" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
+
+service network restart
+ 
+init 6
+************************************MSTNODE02*********************************************************************************************
+
+ip_addr=192.168.80
+bkp_date='date '+%Y_%m_%d-%H_%M_%S''
+cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
+rm -rf /etc/hosts
+echo "$ip_addr.141   mstnode1.hdp.cn hdpmstnode1 mstnode1" >> /etc/hosts
+echo "$ip_addr.142   mstnode2.hdp.cn hdpmstnode2 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.150   edgenode.hdp.cn  hdpedgenode edgenode" >> /etc/hosts
+echo "$ip_addr.151   datanode1.hdp.cn hdpdatanode1  datanode1" >> /etc/hosts
+echo "$ip_addr.152   datanode2.hdp.cn hdpdatanode2 datanode2" >> /etc/hosts
+echo "$ip_addr.153   datanode3.hdp.cn hdpdatanode3 datanode3" >> /etc/hosts     
+cat /etc/hosts
+
+# Do ifconfig to get interface name
+interface_device=eno16777736
+cp /etc/sysconfig/network-scripts/ifcfg-$interface_device /etc/sysconfig/network-scripts/"ifcfg-$interface_device.bkp.`$bkp_date`"
+rm -rf /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "BOOTPROTO=static" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "IPADDR=$ip_addr.142" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETMASK=255.255.255.0" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "DEVICE="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NAME="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETWORKING=yes" >> /etc/sysconfig/network
+echo "HOSTNAME=mstnode2.hdp.cn" >> /etc/sysconfig/network
+echo "GATEWAY=$ip_addr.2" >> /etc/sysconfig/network
+hostnamectl set-hostname mstnode2.hdp.cn
+chattr -i /etc/resolv.conf
+cp /etc/resolv.conf /etc/"resolv.conf.bkp.`$bkp_date`"
+rm -rf /etc/resolv.conf
+echo "nameserver $ip_addr.2" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
+
+service network restart
+
+************************************MSTNODE03******************************************************************************************
+
+ip_addr=192.168.80
+bkp_date='date '+%Y_%m_%d-%H_%M_%S''
+cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
+rm -rf /etc/hosts
+echo "$ip_addr.141   mstnode1.hdp.cn hdpmstnode1 mstnode1" >> /etc/hosts
+echo "$ip_addr.142   mstnode2.hdp.cn hdpmstnode2 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.150   edgenode.hdp.cn  hdpedgenode edgenode" >> /etc/hosts
+echo "$ip_addr.151   datanode1.hdp.cn hdpdatanode1  datanode1" >> /etc/hosts
+echo "$ip_addr.152   datanode2.hdp.cn hdpdatanode2 datanode2" >> /etc/hosts
+echo "$ip_addr.153   datanode3.hdp.cn hdpdatanode3 datanode3" >> /etc/hosts     
+cat /etc/hosts
+
+# Do ifconfig to get interface name
+interface_device=eno16777736
+cp /etc/sysconfig/network-scripts/ifcfg-$interface_device /etc/sysconfig/network-scripts/"ifcfg-$interface_device.bkp.`$bkp_date`"
+rm -rf /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "BOOTPROTO=static" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "IPADDR=$ip_addr.143" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETMASK=255.255.255.0" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "DEVICE="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NAME="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETWORKING=yes" >> /etc/sysconfig/network
+echo "HOSTNAME=mstnode3.hdp.cn" >> /etc/sysconfig/network
+echo "GATEWAY=$ip_addr.2" >> /etc/sysconfig/network
+hostnamectl set-hostname mstnode3.hdp.cn
+chattr -i /etc/resolv.conf
+cp /etc/resolv.conf /etc/"resolv.conf.bkp.`$bkp_date`"
+rm -rf /etc/resolv.conf
+echo "nameserver $ip_addr.2" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
+
+service network restart
+
+
+************************************EDGENODE********************************************************************************************
+
+ip_addr=192.168.80
+bkp_date='date '+%Y_%m_%d-%H_%M_%S''
+cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
+rm -rf /etc/hosts
+echo "$ip_addr.141   mstnode1.hdp.cn hdpmstnode1 mstnode1" >> /etc/hosts
+echo "$ip_addr.142   mstnode2.hdp.cn hdpmstnode2 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.150   edgenode.hdp.cn  hdpedgenode edgenode" >> /etc/hosts
+echo "$ip_addr.151   datanode1.hdp.cn hdpdatanode1  datanode1" >> /etc/hosts
+echo "$ip_addr.152   datanode2.hdp.cn hdpdatanode2 datanode2" >> /etc/hosts
+echo "$ip_addr.153   datanode3.hdp.cn hdpdatanode3 datanode3" >> /etc/hosts     
+cat /etc/hosts
+# Do ifconfig to get interface name
+interface_device=eno16777736
+cp /etc/sysconfig/network-scripts/ifcfg-$interface_device /etc/sysconfig/network-scripts/"ifcfg-$interface_device.bkp.`$bkp_date`"
+rm -rf /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "BOOTPROTO=static" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "IPADDR=$ip_addr.150" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETMASK=255.255.255.0" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "DEVICE="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NAME="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETWORKING=yes" >> /etc/sysconfig/network
+echo "HOSTNAME=edgenode.hdp.cn" >> /etc/sysconfig/network
+echo "GATEWAY=$ip_addr.2" >> /etc/sysconfig/network
+hostnamectl set-hostname edgenode.hdp.cn
+chattr -i /etc/resolv.conf
+cp /etc/resolv.conf /etc/"resolv.conf.bkp.`$bkp_date`"
+rm -rf /etc/resolv.conf
+echo "nameserver $ip_addr.2" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
+service network restart
+
+************************************DATANODE01***********************************************************************************************
+
+ip_addr=192.168.80
+bkp_date='date '+%Y_%m_%d-%H_%M_%S''
+cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
+rm -rf /etc/hosts
+echo "$ip_addr.141   mstnode1.hdp.cn hdpmstnode1 mstnode1" >> /etc/hosts
+echo "$ip_addr.142   mstnode2.hdp.cn hdpmstnode2 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.150   edgenode.hdp.cn  hdpedgenode edgenode" >> /etc/hosts
+echo "$ip_addr.151   datanode1.hdp.cn hdpdatanode1  datanode1" >> /etc/hosts
+echo "$ip_addr.152   datanode2.hdp.cn hdpdatanode2 datanode2" >> /etc/hosts
+echo "$ip_addr.153   datanode3.hdp.cn hdpdatanode3 datanode3" >> /etc/hosts  
+cat /etc/hosts
+# Do ifconfig to get interface name
+interface_device=eno16777736
+cp /etc/sysconfig/network-scripts/ifcfg-$interface_device /etc/sysconfig/network-scripts/"ifcfg-$interface_device.bkp.`$bkp_date`"
+rm -rf /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "BOOTPROTO=static" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "IPADDR=$ip_addr.151" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETMASK=255.255.255.0" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "DEVICE="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NAME="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETWORKING=yes" >> /etc/sysconfig/network
+echo "HOSTNAME=datanode1.hdp.cn" >> /etc/sysconfig/network
+echo "GATEWAY=$ip_addr.2" >> /etc/sysconfig/network
+hostnamectl set-hostname datanode1.hdp.cn
+chattr -i /etc/resolv.conf
+cp /etc/resolv.conf /etc/"resolv.conf.bkp.`$bkp_date`"
+rm -rf /etc/resolv.conf
+echo "nameserver $ip_addr.2" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
+service network restart
+
+************************************DATANODE02*********************************************************************************************
+
+ip_addr=192.168.80
+bkp_date='date '+%Y_%m_%d-%H_%M_%S''
+cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
+rm -rf /etc/hosts
+echo "$ip_addr.141   mstnode1.hdp.cn hdpmstnode1 mstnode1" >> /etc/hosts
+echo "$ip_addr.142   mstnode2.hdp.cn hdpmstnode2 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.150   edgenode.hdp.cn  hdpedgenode edgenode" >> /etc/hosts
+echo "$ip_addr.151   datanode1.hdp.cn hdpdatanode1  datanode1" >> /etc/hosts
+echo "$ip_addr.152   datanode2.hdp.cn hdpdatanode2 datanode2" >> /etc/hosts 
+echo "$ip_addr.153   datanode3.hdp.cn hdpdatanode3 datanode3" >> /etc/hosts    
+cat /etc/hosts
+# Do ifconfig to get interface name
+interface_device=eno16777736
+cp /etc/sysconfig/network-scripts/ifcfg-$interface_device /etc/sysconfig/network-scripts/"ifcfg-$interface_device.bkp.`$bkp_date`"
+rm -rf /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "BOOTPROTO=static" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "IPADDR=$ip_addr.152" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETMASK=255.255.255.0" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "DEVICE="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NAME="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETWORKING=yes" >> /etc/sysconfig/network
+echo "HOSTNAME=datanode2.hdp.cn" >> /etc/sysconfig/network
+echo "GATEWAY=$ip_addr.2" >> /etc/sysconfig/network
+hostnamectl set-hostname datanode2.hdp.cn
+chattr -i /etc/resolv.conf
+cp /etc/resolv.conf /etc/"resolv.conf.bkp.`$bkp_date`"
+rm -rf /etc/resolv.conf
+echo "nameserver $ip_addr.2" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
+service network restart
+
+************************************DATANODE03********************************************************************************************
+
+ip_addr=192.168.80
+bkp_date='date '+%Y_%m_%d-%H_%M_%S''
+cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
+rm -rf /etc/hosts
+echo "$ip_addr.141   mstnode1.hdp.cn hdpmstnode1 mstnode1" >> /etc/hosts
+echo "$ip_addr.142   mstnode2.hdp.cn hdpmstnode2 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.150   edgenode.hdp.cn  hdpedgenode edgenode" >> /etc/hosts
+echo "$ip_addr.151   datanode1.hdp.cn hdpdatanode1  datanode1" >> /etc/hosts
+echo "$ip_addr.152   datanode2.hdp.cn hdpdatanode2 datanode2" >> /etc/hosts 
+echo "$ip_addr.153   datanode3.hdp.cn hdpdatanode3 datanode3" >> /etc/hosts    
+cat /etc/hosts
+# Do ifconfig to get interface name
+interface_device=eno16777736
+cp /etc/sysconfig/network-scripts/ifcfg-$interface_device /etc/sysconfig/network-scripts/"ifcfg-$interface_device.bkp.`$bkp_date`"
+rm -rf /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "BOOTPROTO=static" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "IPADDR=$ip_addr.153" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETMASK=255.255.255.0" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "DEVICE="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NAME="$interface_device"" >> /etc/sysconfig/network-scripts/ifcfg-$interface_device
+echo "NETWORKING=yes" >> /etc/sysconfig/network
+echo "HOSTNAME=datanode3.hdp.cn" >> /etc/sysconfig/network
+echo "GATEWAY=$ip_addr.2" >> /etc/sysconfig/network
+hostnamectl set-hostname datanode3.hdp.cn
+chattr -i /etc/resolv.conf
+cp /etc/resolv.conf /etc/"resolv.conf.bkp.`$bkp_date`"
+rm -rf /etc/resolv.conf
+echo "nameserver $ip_addr.2" >> /etc/resolv.conf
+chattr +i /etc/resolv.conf
+service network restart
