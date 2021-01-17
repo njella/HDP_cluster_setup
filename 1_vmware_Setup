@@ -247,3 +247,45 @@ rm -rf /etc/resolv.conf
 echo "nameserver $ip_addr.2" >> /etc/resolv.conf
 chattr +i /etc/resolv.conf
 service network restart
+
+-----------------------------------------password less ssh----------------------------------------
+step 1:  on edge node
+      ssh-keygen          
+step 2 : On all the nodes 
+mkdir ~/.ssh/
+
+step 3 :   From edgenode
+
+scp ~/.ssh/id_rsa.pub root@mstnode1:~/.ssh/
+scp ~/.ssh/id_rsa.pub root@mstnode2:~/.ssh/
+scp ~/.ssh/id_rsa.pub root@mstnode3:~/.ssh/
+scp ~/.ssh/id_rsa.pub root@edgenode:~/.ssh/
+scp ~/.ssh/id_rsa.pub root@datanode1:~/.ssh/
+scp ~/.ssh/id_rsa.pub root@datanode2:~/.ssh/
+scp ~/.ssh/id_rsa.pub root@datanode3:~/.ssh/
+     <OR you can try below command> 
+sshpass -p "<password>" scp -o StrictHostKeyChecking=no ~/.ssh/id_rsa.pub root@namenode1:~/.ssh/
+
+
+step 4 :  On all the nodes including edge node
+
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
+Try from edge node 
+ssh root@datanode1   : You should be able to connect to datanode1 without password
+
+------------------------------------------disable SELINUX------------------------------------------------------------------
+
+cp /etc/selinux/config /etc/selinux/config.bkp
+rm -rf /etc/selinux/config
+echo "SELINUX=disabled" >> /etc/selinux/config
+echo "SELINUXTYPE=targeted" >> /etc/selinux/config
+
+
+------------------------disable iptables-----------------------------------------
+
+systemctl disable firewalld
+service firewalld stop
+
