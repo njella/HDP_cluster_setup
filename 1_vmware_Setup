@@ -12,7 +12,7 @@ cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
-echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
 echo "$ip_addr.150   edgenode.hdp.cn.com  hdpedgenode edgenode" >> /etc/hosts
 echo "$ip_addr.151   datanode1.hdp.cn.com hdpdatanode1  datanode1" >> /etc/hosts
 echo "$ip_addr.152   datanode2.hdp.cn.com hdpdatanode2 datanode2" >> /etc/hosts   
@@ -47,7 +47,7 @@ cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
-echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
 echo "$ip_addr.150   edgenode.hdp.cn.com  hdpedgenode edgenode" >> /etc/hosts
 echo "$ip_addr.151   datanode1.hdp.cn.com hdpdatanode1  datanode1" >> /etc/hosts
 echo "$ip_addr.152   datanode2.hdp.cn.com hdpdatanode2 datanode2" >> /etc/hosts
@@ -83,7 +83,7 @@ cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
-echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
 echo "$ip_addr.150   edgenode.hdp.cn.com  hdpedgenode edgenode" >> /etc/hosts
 echo "$ip_addr.151   datanode1.hdp.cn.com hdpdatanode1  datanode1" >> /etc/hosts
 echo "$ip_addr.152   datanode2.hdp.cn.com hdpdatanode2 datanode2" >> /etc/hosts
@@ -120,7 +120,7 @@ cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
-echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
 echo "$ip_addr.150   edgenode.hdp.cn.com  hdpedgenode edgenode" >> /etc/hosts
 echo "$ip_addr.151   datanode1.hdp.cn.com hdpdatanode1  datanode1" >> /etc/hosts
 echo "$ip_addr.152   datanode2.hdp.cn.com hdpdatanode2 datanode2" >> /etc/hosts
@@ -154,7 +154,7 @@ cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
-echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
 echo "$ip_addr.150   edgenode.hdp.cn.com  hdpedgenode edgenode" >> /etc/hosts
 echo "$ip_addr.151   datanode1.hdp.cn.com hdpdatanode1  datanode1" >> /etc/hosts
 echo "$ip_addr.152   datanode2.hdp.cn.com hdpdatanode2 datanode2" >> /etc/hosts
@@ -188,7 +188,7 @@ cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
-echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
 echo "$ip_addr.150   edgenode.hdp.cn.com  hdpedgenode edgenode" >> /etc/hosts
 echo "$ip_addr.151   datanode1.hdp.cn.com hdpdatanode1  datanode1" >> /etc/hosts
 echo "$ip_addr.152   datanode2.hdp.cn.com hdpdatanode2 datanode2" >> /etc/hosts 
@@ -222,7 +222,7 @@ cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
-echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode2" >> /etc/hosts
+echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
 echo "$ip_addr.150   edgenode.hdp.cn.com  hdpedgenode edgenode" >> /etc/hosts
 echo "$ip_addr.151   datanode1.hdp.cn.com hdpdatanode1  datanode1" >> /etc/hosts
 echo "$ip_addr.152   datanode2.hdp.cn.com hdpdatanode2 datanode2" >> /etc/hosts 
