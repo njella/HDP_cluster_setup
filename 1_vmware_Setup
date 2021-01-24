@@ -12,6 +12,8 @@ ip_addr=192.168.80
 bkp_date='date '+%Y_%m_%d-%H_%M_%S''
 cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
+echo "::1   localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
 echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
@@ -47,6 +49,8 @@ ip_addr=192.168.80
 bkp_date='date '+%Y_%m_%d-%H_%M_%S''
 cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
+echo "::1   localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
 echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
@@ -83,6 +87,8 @@ ip_addr=192.168.80
 bkp_date='date '+%Y_%m_%d-%H_%M_%S''
 cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
+echo "::1   localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
 echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
@@ -120,6 +126,8 @@ ip_addr=192.168.80
 bkp_date='date '+%Y_%m_%d-%H_%M_%S''
 cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
+echo "::1   localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
 echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
@@ -154,6 +162,8 @@ ip_addr=192.168.80
 bkp_date='date '+%Y_%m_%d-%H_%M_%S''
 cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
+echo "::1   localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
 echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
@@ -188,6 +198,8 @@ ip_addr=192.168.80
 bkp_date='date '+%Y_%m_%d-%H_%M_%S''
 cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
+echo "::1   localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
 echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
@@ -222,6 +234,8 @@ ip_addr=192.168.80
 bkp_date='date '+%Y_%m_%d-%H_%M_%S''
 cp /etc/hosts /etc/"hosts.bkp.`$bkp_date`"
 rm -rf /etc/hosts
+echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts
+echo "::1   localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 echo "$ip_addr.141   mstnode1.hdp.cn.com hdpmstnode1 mstnode1" >> /etc/hosts
 echo "$ip_addr.142   mstnode2.hdp.cn.com hdpmstnode2 mstnode2" >> /etc/hosts
 echo "$ip_addr.143   mstnode3.hdp.cn.com hdpmstnode3 mstnode3" >> /etc/hosts
